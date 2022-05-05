@@ -1,6 +1,5 @@
 package com.silva.laliga.entities;
 
-import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,8 +13,8 @@ public class Jugador {
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private int id_jugador;
 		private String nombre;
-		private String equipo;
-		private Date nacimiento;
+		private int id_equipo_jugador;
+		private String nacimiento;
 		private String posicion;
 		private int goles;
 		private int asistencias;
@@ -28,12 +27,12 @@ public class Jugador {
 			super();
 		}
 
-		public Jugador(int id_jugador, String nombre, String equipo, Date nacimiento, String posicion, int goles,
-				int asistencias, int tarjetas_amarillas, int tarjetas_rojas, String foto, int dorsal) {
+		public Jugador(int id_jugador, String nombre, int id_equipo_jugador, String nacimiento, String posicion,
+				int goles, int asistencias, int tarjetas_amarillas, int tarjetas_rojas, String foto, int dorsal) {
 			super();
 			this.id_jugador = id_jugador;
 			this.nombre = nombre;
-			this.equipo = equipo;
+			this.id_equipo_jugador = id_equipo_jugador;
 			this.nacimiento = nacimiento;
 			this.posicion = posicion;
 			this.goles = goles;
@@ -41,7 +40,7 @@ public class Jugador {
 			this.tarjetas_amarillas = tarjetas_amarillas;
 			this.tarjetas_rojas = tarjetas_rojas;
 			this.foto = foto;
-			this.setDorsal(dorsal);
+			this.dorsal = dorsal;
 		}
 
 		public int getId_jugador() {
@@ -60,19 +59,19 @@ public class Jugador {
 			this.nombre = nombre;
 		}
 
-		public String getEquipo() {
-			return equipo;
+		public int getId_equipo_jugador() {
+			return id_equipo_jugador;
 		}
 
-		public void setEquipo(String equipo) {
-			this.equipo = equipo;
+		public void setId_equipo_jugador(int id_equipo_jugador) {
+			this.id_equipo_jugador = id_equipo_jugador;
 		}
 
-		public Date getNacimiento() {
+		public String getNacimiento() {
 			return nacimiento;
 		}
 
-		public void setNacimiento(Date nacimiento) {
+		public void setNacimiento(String nacimiento) {
 			this.nacimiento = nacimiento;
 		}
 
@@ -131,7 +130,8 @@ public class Jugador {
 		public void setDorsal(int dorsal) {
 			this.dorsal = dorsal;
 		}
-		
+
+
 		
 		
 	

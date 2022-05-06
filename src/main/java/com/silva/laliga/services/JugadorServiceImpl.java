@@ -3,6 +3,8 @@ package com.silva.laliga.services;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+
 import com.silva.laliga.entities.Jugador;
 import com.silva.laliga.repositories.IJugadoresRepo;
 
@@ -19,6 +21,22 @@ public class JugadorServiceImpl implements IJugadorService {
 	public List<Jugador> findAll() {
 		List<Jugador> jugadores = jugadoresRepo.findAll()
 ;		return jugadores;
+	}
+
+
+
+	
+	@Override
+	public void addJugador(Jugador c) {
+		jugadoresRepo.save(c);
+	}
+
+
+
+
+	@Override
+	public List<Jugador> findByEquipo(Integer id) {
+		return jugadoresRepo.findByEquipo(id);
 	}
 
 }

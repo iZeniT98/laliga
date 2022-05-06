@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaLiga</title>
+</head>
+<body>
+    <h1>Jugadores</h1>
+    <p>th:text="${nombre}">xx</p>
+    <div>
+        <table>
+            <tr>
+                <td>Id_jugador</td>
+                <td>Nombre</td>
+                <td>Imagen</td>
+                <td>Accion</td>
+                <td>Accion</td>
+                <td>Accion</td>
+                <td>Accion</td>
+                <td>Accion</td>
+                <td>Accion</td>
+                <td>Accion</td>
+                <td>Accion</td>
+                <td>Accion</td>
+            </tr>
+            <tr th:each="jugador: ${ajugadores}">
+                <td th:text="${jugador.nombre}"></td>
+                
+                <td th:text="${jugador.nacimiento}"></td>
+                <td th:text="${jugador.posicion}"></td>
+                <td th:text="${jugador.goles}"></td>
+                <td th:text="${jugador.asistencias}"></td>
+                <td th:text="${jugador.tarjetas_amarillas}"></td>
+                <td th:text="${jugador.tarjetas_rojas}"></td>
+                <td th:text="${jugador.foto}"></td>
+                <td th:text="${jugador.dorsal}"></td>
+                <td>Borrar</td>
+                <td>Modificar</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <form method="get" action="/crearJugador">
+
+        <input type="text" name="nombre" placeholder="Nombre de la categoria">
+       
+        <input type="text" name="nacimiento" placeholder="Nombre de la imagen">
+        <input type="text" name="posicion" placeholder="Nombre de la imagen">
+        <input type="number" name="goles" placeholder="Nombre de la imagen">
+        <input type="number" name="asistencias" placeholder="Nombre de la imagen">
+        <input type="number" name="tarjetas_amarillas" placeholder="Nombre de la imagen">
+        <input type="number" name="tarjetas_rojas" placeholder="Nombre de la imagen">
+        <input type="text" name="foto" placeholder="Nombre de la imagen">
+        <input type="number" name="dorsal" placeholder="Nombre de la imagen">
+        <input type="submit" name="Enviar">
+    </form>
+</body>
+</html>
